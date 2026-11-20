@@ -96,3 +96,8 @@ form.addEventListener('submit', event => {
     .filter(Boolean).join('\n\n');
   window.open(whatsapp + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
 });
+
+const header = document.querySelector('.top');
+const markScrolled = () => header.classList.toggle('is-scrolled', window.scrollY > 4);
+markScrolled();
+window.addEventListener('scroll', markScrolled, { passive: true });
